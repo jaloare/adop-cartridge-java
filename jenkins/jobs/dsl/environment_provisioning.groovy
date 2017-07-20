@@ -3,7 +3,7 @@ def workspaceFolderName = "${WORKSPACE_NAME}"
 def projectFolderName = "${PROJECT_NAME}"
 
 // Variables
-def environmentTemplateGitUrl = "https://github.com/DigitalOnUs/adop-cartridge-java-environment-template"
+def environmentTemplateGitUrl = "https://github.com/DigitalOnUs/adop-cartridge-java-environment-template.git"
 
 // Jobs
 def environmentProvisioningPipelineView = buildPipelineView(projectFolderName + "/Environment_Provisioning")
