@@ -79,7 +79,6 @@ The reference application deploy job is expecting the default environment to be 
             remote {
                 name("origin")
                 url("${environmentTemplateGitUrl}")
-                credentials("adop-jenkins-master")
             }
             branch("*/master")
         }
