@@ -6,7 +6,7 @@ def projectFolderName = "${PROJECT_NAME}"
 def projectNameKey = projectFolderName.toLowerCase().replace("/", "-")
 def referenceAppgitRepo = "spring-petclinic"
 def regressionTestGitRepo = "adop-cartridge-java-regression-tests"
-def referenceAppGitUrl = "https://github.com/jaloare/spring-petclinic.git"
+def referenceAppGitUrl = "https://github.com/jaloare/spring-petclinic"
 def regressionTestGitUrl = "https://github.com/DigitalOnUs/adop-cartridge-java-regression-tests.git"
 
 // Jobs
@@ -32,6 +32,9 @@ pipelineView.with {
 }
 
 buildAppJob.with {
+    properties {
+        githubProjectUrl(referenceAppGitUrl)
+    }
     description("This job builds Java Spring reference application")
     wrappers {
         preBuildCleanup()
@@ -42,7 +45,7 @@ buildAppJob.with {
     scm {
         git {
             remote {
-                url(referenceAppGitUrl)
+                url(referenceAppGitUrl + ".git")
             }
             branch("*/master")
         }
